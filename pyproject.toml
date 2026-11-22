@@ -1,0 +1,19 @@
+[project]
+name = "at2-rn-mlp-deploy-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard]>=0.163.1",
+    "joblib>=1.6.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.5",
+    "pandas>=3.1.1",
+    "scikit-learn>=1.9.1",
+]
+
+[dependency-groups]
+dev = [
+    "notebook>=7.6.5",
+]

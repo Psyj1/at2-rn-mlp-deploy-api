@@ -1,0 +1,55 @@
+### 1. Metadados do Serviço
+GET http://127.0.0.1:8000/diagnostico/modelo
+User-Agent: Tester-Audit-Agent
+Accept: application/json
+
+### 2. Predição com Perfil A (provável GALAXY)
+POST http://127.0.0.1:8000/predict
+User-Agent: Tester-Audit-Agent
+Content-Type: application/json
+
+{
+  "alpha": 135.7,
+  "delta": 32.1,
+  "u": 22.5,
+  "g": 21.0,
+  "r": 20.4,
+  "i": 19.9,
+  "z": 19.6,
+  "redshift": 0.12,
+  "faixa_redshift": "medio"
+}
+
+### 3. Predição com Perfil B (provável STAR)
+POST http://127.0.0.1:8000/predict
+User-Agent: Tester-Audit-Agent
+Content-Type: application/json
+
+{
+  "alpha": 200.0,
+  "delta": 10.0,
+  "u": 25.0,
+  "g": 23.0,
+  "r": 22.0,
+  "i": 21.0,
+  "z": 20.0,
+  "redshift": -0.02,
+  "faixa_redshift": "baixo"
+}
+
+### 4. Predição com Entrada Inválida (Validação Pydantic → 422)
+POST http://127.0.0.1:8000/predict
+User-Agent: Tester-Audit-Agent
+Content-Type: application/json
+
+{
+  "alpha": "invalido",
+  "delta": 32.1,
+  "u": 22.5,
+  "g": 21.0,
+  "r": 20.4,
+  "i": 19.9,
+  "z": 19.6,
+  "redshift": 0.12,
+  "faixa_redshift": "medio"
+}
