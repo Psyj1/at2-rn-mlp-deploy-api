@@ -39,8 +39,8 @@ am-at2-redes-neurais/
 
 ### Métricas no conjunto de teste
 
-- **Acurácia global:** [preencher com o valor do notebook]
-- **Matthews Correlation Coefficient (MCC):** [preencher]
+- **Acurácia global:** [97.32%]
+- **Matthews Correlation Coefficient (MCC):** [0.9526]
 - **Relatório por classe:** ver `notebooks/analise_treinamento.ipynb` (célula de avaliação)
 - **Matriz de confusão:** ver notebook
 
